@@ -239,7 +239,7 @@ gamePlaySelectors.userAnswer.addEventListener('keyup', (event) => {
 });
 
 audioSelectors.musicCheckBox.addEventListener('change', () => {
-    const songs = ['https://cdn.sndup.net/y2n8/1.mp3?token=CSAvP6gZ90TmhdJX5zgoCRsiVJZEAQ_fklhny6tjnyw&token_path=%2Fy2n8%2F&expires=1670877696', 'https://cdn.sndup.net/ky8y/2.mp3?token=P2cM8layFvGIg9ftDiy7uKVhJs526WOIx1a5OL60XgY&token_path=%2Fky8y%2F&expires=1670877742', 'https://cdn.sndup.net/jvvw/3.mp3?token=qBbZt6SChW0KOje9-jykXuD3ud1PpxokKtU1F2feIKE&token_path=%2Fjvvw%2F&expires=1670877810'];
+    const songs = ['audio/song1.mp3', 'audio/song2.mp3', 'audio/song3.mp3'];
     const randomSong = songs[Math.floor(Math.random() * songs.length)];
     audioSelectors.music.setAttribute('src', randomSong);
 
