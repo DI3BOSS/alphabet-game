@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Alphabet Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+</head>
+<body class="flex">
+  <nav class="navbar flex">
+    <ul class="nav-items flex">
+      <li class="nav-items__text username-item">User: <span class="nav-items__text_highlighted username"></span></li>
+      <li class="nav-items__text highscore-item hidden">Highscore: <span class="nav-items__text_highlighted highscore"></span></li>
+      <li class="nav-items__text game-mode-item">Mode: <span class="nav-items__text_highlighted game-mode"></span></li>
+      <li><button class="button button_disabled flex exit-button" disabled="disabled"><i class="fa-solid fa-right-from-bracket"></i>Exit</button></li>
+    </ul>
+  </nav>
+    <section class="letter-container flex flex-direction-col">
+        <div class="start hidden"><button class="button flex start-button"><i class="fa-solid fa-angles-right"></i>START<i class="fa-solid fa-angles-left"></i></button></div>
+        <div class="letter-container__letters">
+            <p class="letter flex">A</p>
+            <p class="letter flex">B</p>
+            <p class="letter flex">C</p>
+            <p class="letter flex">D</p>
+            <p class="letter flex">E</p>
+            <p class="letter flex">F</p>
+            <p class="letter flex">G</p>
+            <p class="letter flex">H</p>
+            <p class="letter flex">I</p>
+            <p class="letter flex">J</p>
+            <p class="letter flex">K</p>
+            <p class="letter flex">L</p>
+            <p class="letter flex">M</p>
+            <p class="letter flex">N</p>
+            <p class="letter flex">O</p>
+            <p class="letter flex">P</p>
+            <p class="letter flex">Q</p>
+            <p class="letter flex">R</p>
+            <p class="letter flex">S</p>
+            <p class="letter flex">T</p>
+            <p class="letter flex">U</p>
+            <p class="letter flex">V</p>
+            <p class="letter flex">W</p>
+            <p class="letter flex">X</p>
+            <p class="letter flex">Y</p>
+            <p class="letter flex">Z</p>
+          </div>
+          <div class="answer-feedback flex"></div>
+          <div class="timer flex"><span class="timer__text">3:00</span></div>
+        </section>
+    <section class="question-container flex flex-direction-col">
+      <section class="info-screen flex flex-direction-col welcome-screen">
+        <div class="welcome-container"></div>
+          <div class="header-title-wrapper flex flex-direction-col">
+            <h1 class="header-title header-title_uppercase">The Alphabet Game</h1>
+            <h2 class="header-subtitle">Web Development Edition</h2>
+          </div>
+          <p class="game-rules">The rules are simple. You get 26 questions, one for each letter of the alphabet. Every correct answer earns you a point. If you don't know the answer right away, you can pass and skip the question until the next round.<br><br>You have 3 minutes to answer all the questions. When time is up, the game is over.</p>
+          <button class="button flex welcome-button">Understood!</button>
+        </div>
+      </section>
+      <section class="info-screen flex flex-direction-col username-screen hidden">
+        <h1 class="header-title">Enter your username</h1>
+        <input type="text" class="input text-align-left username-input" placeholder="Name" maxlength=15 />
+        <button class="button flex submit-username-button">Submit</button>
+      </section>
+      <section class="info-screen flex flex-direction-col game-mode-screen hidden">
+        <h1 class="header-title">Pick a game mode</h1>
+          <button class="button flex game-mode-button game-mode-button_easy">Easy</button>
+          <button class="button flex game-mode-button game-mode-button_medium">Medium</button>
+          <button class="button flex game-mode-button game-mode-button_hard">Hard</button>
+      </section>
+      <section class="info-screen flex flex-direction-col end-screen hidden">
+        <h1 class="header-title header-title_uppercase end-title"></h1>
+        <p class="end-info flex"></p>
+        <button class="button flex play-again-button">Play again</button>
+      </section>
+      <div class="keyboard-controls-info flex flex-direction-col hidden">
+        <h2 class="header-title">Keyboard controls</h2>
+        <table>
+          <tr>
+            <td class="text-align-left">Submit</td>
+            <td class="flex keyboard-key-cell">Enter<img class="keyboard-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAC8klEQVRoge2az0tUURTHP2cckciWadk+KgqC0IjC1MyY5zB/QYGr9koEoW3SZbjxPwhbR/4YKRznKbqpNlFQSDshKwkkWxQz806LeW8cE8p33x19yHw2b+YO873ny+Hc+859D+rEC6mVsDr5NMggcBk4akVU+InyCvHGZbZndudPNUBT+TFEhmuhvY2MSfb6w8o32/J+JqaB34iOUGx4Ki86161o31o6SYN3GxgFmhAv/XdmrKGOu6COq9qfv1eTCQBNuffVcVUdNxeMJazPIrSXZ2PSunZlDn3if2oPhuwbUZoBJNv9xbq2T5X2sWDMvpEDom4kbtSNxI26kbgRCyPquIvquK+jaCRtBRORzqgCsciIDepG4sauGrHU2a1FisqAHUY0lR+DyJ3dGujdiBqhqRjxMzFMDTq7/aAqIzJUvuiIzHY/PqB4jNku9v3o7GrItpF96OxqyeFdfsOgTv4EJGZAC5LtumIrKBOMM6KZ+VaQBdBLQJOiRmdkmlkODhB+mMYChkY0M99KMbkAnAU+gjqCqFEEhVKwyHwy+r9PaCPat9LimzhH2UR3pAVCdNC/ThtrENKI9q20kCzksGRCHfcBkAY2aSpNmOpAiGLX1NJxpJADzhPBhHblmzmS6PAzkQY88AbkWe/3sFrV7H3VEm+esgmAMyDr6riG01bKaRO8Acn2PDcUqhBm+TUr5t1sgayCN0NTaSJqJgL2bkQTNxEvB1wAVkkmu2Xq2mcbQdhgz8Uuc50baOIG8A44TbGY18xyW+1CC0eoVavKzHtiZib0PiJznRsUG2Nnxmhnl5dXv5Es9gIfKJvJ2g0rPMb3WjLV+xW0B3gL8stiTEZEuvv1N8SLlmKJxKHpR6qNbIH/CDjmaDp3yv9YufWvNlI+RC4/x443mgxifBMMbdeIeONoogcY1ZQrNCYn47RzA2hmuY1S6Q6qj4ByzD47ujp1FkdBR/Y5PkP+8wqH9i/0o4khhI7gZCU2/OOlmjpx4w8uiQeLIwVs0gAAAABJRU5ErkJggg=="></td>
+          </tr>
+          <tr>
+            <td class="text-align-left">Pass</td>
+            <td class="flex keyboard-key-cell">Space<img class="keyboard-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAAB/klEQVRoge3Yv2uTQRzH8ff3fHgibaJZdNDdglVEETQQlNKCptYQhE5x1cXiXP0H7OrQRdd2cilFW0TbVAgYh1RQK/Uf8Ac6FGsGmzRfh+d5mgxa9FG5J3Cv6Z675fPh4eDuwHEcx3Ecx/lfJBpoYSGF6buOShn0GNBvMdduGsBrVGdJH7wnDwa3ICyiY0uHae95BJywmTCGl3jemMzn34sWFlJI3wuCEuvQnsTzl2U+v2k75c9osZqh2RxGZAoYQFklfSAnOrpyE7gLrONrTuaGNixn/S1aqmTZkhowADJhgHKw1J7slRIAMje0gcjt4EuvGoSjAHj+ssVc8bRTT8PRoEFJAyR1T+xGFs9+DYcZYzXJP+SKJI0rkjSuSNK4IkmzU0SL1YzNIHHoyJP90bjzR5rNYStp/kbK38ncKSIypaVK1kqgGLRUyaJ6J/oWHV3RrvV3GG6xvXep60CWKFqo7cN8HwlLHInmO0WUVYRTtgLG0pXZAMHx3dMLIBNAjeCCn1QNlOcIN8BcDOc2PZC3oGdokZfF89PAtM2Uf0IvPbuCAsobg7ZngN7e7IYZ0fE1n8bnGnCSntzsUudTfy541ypWD9FqPSQo00OkzrZclsfnPnReGsfXfBpfrqFaxnA8ussnjvAN5RXCLB/T96V+umk7kuM4juM4zi/8AGqVp/8vogStAAAAAElFTkSuQmCC"></td>
+          </tr>
+          <tr>
+            <td class="text-align-left">Exit</td>
+            <td class="flex keyboard-key-cell">Esc<img class="keyboard-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABmJLR0QA/wD/AP+gvaeTAAADe0lEQVRoge2ZT2gcVRzHP7+ZTdyYtNIcIqkiHvTWi9RUWqPZDTRhZ2PBVqFiA1J68iKVolIThaaXQiwWrEhOUloURMS2u0mQZCcaAtb6h1KhevEguDVCD+ZP2+nO+3nYSWlpZ8OOm2St8zkNvN+b+Xx5b3fmvQcxMTExMWuALFegTqEPZD/wFNC88kq3IMyjnEPMUcl15yqXVkAzhcOIvF1bu6jIYcl3DYa2hjUEI3EGuI7oACX7lIw/W1wRxzCH3q/bsc0eYAi4DzF9y43MnTdx3El1XNVs4cCKWFbjknHfUMdVddyJsBortLfQUb4LJ2uvViWiJ4KrjrCS8CBKC4Dk05dra1U9tzisC6sJD/IfIw5Sb8RB6o04SL1xzwRJRO2oqOBM7Qf2AY8Df6F6Aq6+K6PO9eA76QNgO5AELoEZlHz3lwDaO9OK7b0PpIBWkJ+wzICcTbtRfKKPiDP1FvAesA7VU8AcIm8iTccAsM3HwE7gC2AYeBSsz/S56UfKT/Y+B/oBD5gB3YbKGc0UHl7dIPAa4IPfKaPpV9BkB3AFZJ/2zrQCTwMGlTx+4zDKy4gMcsNr0mxhE0IKKJJIPCH5VA/CRyizWNaWKDKRppZmv9mA+g+Wg9iT6rjANSgvvGwaSo+hjKK8gOin2J6Pcg7DcRnr/kWdyV3lFYT8IKc75wAkl3o1isu/CkJJk9gAzCMycke7p0UemN3NYttOVHeB9CBsBd2qWdfDiIXobV30xZkmFv0kC6Wr4qavVasUbWqNP3MZ+BNYj5pxyXUdYcEcB12PMRtoJMlC2xjK85JP72ZR21AZBsDoZizzc6DfEUxDmPfyqH+FFslEUYoURBBF5B1AQKbVcSe4Xy6hHESknXnzG0I78JI67rc0yyeI9gMGmzHJpS+C5IA2LO9XzboXg9/MBYotZ1ctCIDkukZQkwK+AjYCv6NygObZveKmS9iJHuBDwELZBPyImB03/14bzR7QYwhFFAtlhFLDdvn+yRtRne5KsLTU5StXh+V87pk3exyk3oiD1BtxkHrjfxFkDoKN5DVG+yYeCi7/DqupFOQ7gGA3fG3RxJLD+bCS8M94MUdRqxsY0owrNCROyunOP2qsWBHdMb0R3+9H9dBNpxAqH/Q4U0OgAzX2i0jEg54lNDuZRa3XEbYs7dCvGlUcvcXExMTErAn/ADd4R6xKnYxWAAAAAElFTkSuQmCC"></td>
+          </tr>
+        </table>
+        <button class="button keyboard-controls-button flex">OK!</button>
+      </div>
+      <div class="question-answer-wrapper flex flex-direction-col hidden">
+        <div class="starting-with-wrapper flex">
+          <p class ="flex starting-with">Starting with<span class="letter flex letter_starting-with"></span></p>
+        </div>
+        <h2 class="question"></h2>
+        <input type="text" class="input text-align-left answer-input">
+        <div class="required-alert"><span class="required-alert-text">You must fill in an answer</span></div>
+        <div class="button-wrapper flex">
+          <button class="button button_disabled flex submit-answer-button" disabled="disabled">Submit</button>
+          <button class="button button_disabled flex pass-button" disabled="disabled">Pass</button>
+        </div>
+      </div>
+        <div class="current-score flex hidden">
+          <h2 class="header-subtitle current-score__title">Score</h2>
+          <p class="current-score__score">0</p>
+        </div>
+    </section>
+    <audio class ="music"></audio>
+        <div class="music-player flex">
+          <p class="music-player__text">Music</p>
+          <label class="music-player__switch">
+            <input class="music-player__checkbox" type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+    <script src="game.js" type="module"></script>
+    <script src="https://kit.fontawesome.com/9559ee5ad9.js" crossorigin="anonymous"></script>
+</body>
+</html>
